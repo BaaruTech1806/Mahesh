@@ -1,0 +1,13 @@
+.mat-paginator-page-size {
+    display: none; /* Hides the entire page size dropdown and label */
+  }
+
+:host  ::ng-deep .mat-mdc-paginator-container{
+    flex-wrap: nowrap;
+    justify-content: center;
+  }
+
+:host ::ng-deep .mat-mdc-paginator-range-label {
+    display: none;
+    margin: 0 32px 0 24px;
+}
