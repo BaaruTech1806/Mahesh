@@ -50,7 +50,6 @@ export class ExpansionPanelComponent {
 
   constructor(private clipboard: Clipboard) {
     this.updatePaginatedItems();
-    console.log(this.questions)
   }
 
   copyCode(val:any)
