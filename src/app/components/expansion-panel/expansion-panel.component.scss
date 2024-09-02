@@ -11,3 +11,10 @@
     display: none;
     margin: 0 32px 0 24px;
 }
+button{
+  background: none;
+  border: none;
+}
+:host ::ng-deep .decorationsOverviewRuler{
+  display: hidden;
+}
