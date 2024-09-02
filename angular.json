@@ -27,8 +27,8 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               {
-                "glob": "**/*",
-                "input": "public"
+                "glob": "**/*","input": "node_modules/monaco-editor", "output": "/assets/monaco/"
+                
               }
             ],
             "styles": [
@@ -39,9 +39,7 @@
             "scripts": [],
             "server": "src/main.server.ts",
             "prerender": true,
-            "ssr": {
-              "entry": "server.ts"
-            }
+            "ssr": false
           },
           "configurations": {
             "production": {
@@ -93,8 +91,7 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               {
-                "glob": "**/*",
-                "input": "public"
+                "glob": "**/*","input": "node_modules/monaco-editor", "output": "/assets/monaco/"
               }
             ],
             "styles": [
