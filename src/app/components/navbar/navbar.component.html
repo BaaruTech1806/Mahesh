@@ -8,11 +8,15 @@
 </mat-toolbar>
 <mat-sidenav-container class="sidenav-wrapper">
   <mat-sidenav #sidenav mode="push">
-    <mat-nav-list class="px-5">
-      <mat-list-item *ngFor="let n of navItems" [routerLink]="n.path" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="text-center" (click)="sidenav.toggle()">
-        {{n.menuItem}}
-      </mat-list-item>
-    </mat-nav-list>
+    <nav>
+      <ul class="py-3 px-5">
+        <li *ngFor="let n of navItems">
+          <div routerLinkActive="active" [routerLink]="n.path" [routerLinkActiveOptions]="{exact:true}" class="rounded-5 list-div" matRipple (click)="sidenav.toggle()">
+              {{n.menuItem}}
+          </div>
+        </li>
+      </ul>
+    </nav>
   </mat-sidenav>
   <mat-sidenav-content class="container-flex">
     <router-outlet></router-outlet>
