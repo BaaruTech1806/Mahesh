@@ -1,0 +1,17 @@
+.hero-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://cdn.pixabay.com/photo/2016/11/30/20/58/programming-1873854_1280.png");
+    height: 100vh;
+    width: 100vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.hero-text{
+    text-align: center;
+    position: relative;
+    transform: translate(-50%, -50%);
+  color: white;
+  top: 50%;
+  left: 50%;
+}
