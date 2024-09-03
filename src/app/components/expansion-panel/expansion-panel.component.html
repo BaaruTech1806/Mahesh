@@ -1,29 +1,32 @@
-<div class="example-action-buttons text-center">
-    <button mat-button (click)="accordion().openAll()">Expand All</button>
-    <button mat-button (click)="accordion().closeAll()">Collapse All</button>
-</div>
-<mat-accordion class="example-headers-align" multi>
-    <mat-expansion-panel *ngFor="let q of paginatedItems; let i = index" class="mb-2">
-        <mat-expansion-panel-header>
-            <mat-panel-title>{{ (currentPage * pageSize) + i + 1 }}. {{q.question}} </mat-panel-title>
-        </mat-expansion-panel-header>
-        <mat-divider class="pt-3"></mat-divider>
-        <p class="mx-3 mb-0">{{q.answer}}</p>
-        <div *ngIf="q.exampleCode" class="m-2">
-            <div class="bg-dark text-end align-items-between justify-content-between d-flex">
-                <small class="text-white p-2">JavaScript</small>
-                <button (click)="copyCode(q.exampleCode)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="grey" class="bi bi-copy" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/>
-                  </svg></button>
+
+<div class="container-fluid">
+    <div class="example-action-buttons text-center">
+        <button mat-button (click)="accordion().openAll()">Expand All</button>
+        <button mat-button (click)="accordion().closeAll()">Collapse All</button>
+    </div>
+    <mat-accordion class="example-headers-align" multi>
+        <mat-expansion-panel *ngFor="let q of paginatedItems; let i = index" class="mb-2">
+            <mat-expansion-panel-header>
+                <mat-panel-title>{{ (currentPage * pageSize) + i + 1 }}. {{q.question}} </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-divider class="pt-3"></mat-divider>
+            <p class="mx-3 mb-0">{{q.answer}}</p>
+            <div *ngIf="q.exampleCode" class="m-2">
+                <div class="bg-dark text-end align-items-between justify-content-between d-flex">
+                    <small class="text-white p-2">JavaScript</small>
+                    <button (click)="copyCode(q.exampleCode)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="grey" class="bi bi-copy" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/>
+                      </svg></button>
+                </div>
+                <mat-divider></mat-divider>
+                <ngx-monaco-editor [options]="editorOptions" ngModel={{q.exampleCode}}></ngx-monaco-editor>
             </div>
-            <mat-divider></mat-divider>
-            <ngx-monaco-editor [options]="editorOptions" ngModel={{q.exampleCode}}></ngx-monaco-editor>
-        </div>
-    </mat-expansion-panel>
-</mat-accordion>
-<mat-paginator
-  [length]="questions.length"
-  [pageSize]="pageSize"
-  [pageSizeOptions]="[5, 10, 20]"
-  (page)="onPageChange($event)">
-</mat-paginator>
+        </mat-expansion-panel>
+    </mat-accordion>
+    <mat-paginator
+      [length]="questions.length"
+      [pageSize]="pageSize"
+      [pageSizeOptions]="[5, 10, 20]"
+      (page)="onPageChange($event)">
+    </mat-paginator>
+</div>

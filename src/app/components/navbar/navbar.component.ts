@@ -2,22 +2,33 @@ import { Component } from '@angular/core';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import { SideNavComponent } from "../side-nav/side-nav.component";
+import { CommonModule } from '@angular/common';
+import {MatListModule} from '@angular/material/list';
 
 @Component({
-  selector: 'app-navbar',
+  selector: 'app-navbar', 
   standalone: true,
-  imports: [MatToolbarModule, MatButtonModule, MatIconModule,MatSidenavModule],
+  imports: [MatToolbarModule,MatListModule,RouterModule, MatButtonModule,CommonModule, MatIconModule, MatSidenavModule, SideNavComponent],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent {
-    constructor(private route:Router){}
+    constructor(public route:Router){}
 
     showFiller = false;
 
-    // toggle(){
-    //   this.route.navigateByUrl("/sidenav")
-    // }
+    navItems=[
+      {
+        path:'',
+        menuItem:'Home'
+      },
+      {
+        path:'theory',
+        menuItem:'Theory'
+      },
+      
+    ]
 }
