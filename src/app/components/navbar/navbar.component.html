@@ -1,4 +1,4 @@
-<mat-toolbar class="primary">
+<mat-toolbar>
   <button mat-icon-button class="example-icon" (click)="sidenav.toggle()"
     aria-label="Example icon-button with menu icon">
     <mat-icon>menu</mat-icon>
@@ -7,9 +7,9 @@
   <span class="example-spacer"></span>
 </mat-toolbar>
 <mat-sidenav-container class="sidenav-wrapper">
-  <mat-sidenav #sidenav>
-    <mat-nav-list class="flex-grow-1 px-5">
-      <mat-list-item color="primary" *ngFor="let n of navItems" [routerLink]="n.path" routerLinkActive="active" (click)="sidenav.toggle()" class="text-center">
+  <mat-sidenav #sidenav opened mode="push">
+    <mat-nav-list class="px-5">
+      <mat-list-item *ngFor="let n of navItems" [routerLink]="n.path" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="text-center" (click)="sidenav.toggle()">
         {{n.menuItem}}
       </mat-list-item>
     </mat-nav-list>
