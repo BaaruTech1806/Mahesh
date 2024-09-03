@@ -8,8 +8,8 @@
 </mat-toolbar>
 <mat-sidenav-container class="sidenav-wrapper">
   <mat-sidenav #sidenav>
-    <mat-nav-list class="flex-grow-1">
-      <mat-list-item *ngFor="let n of navItems" [routerLink]="n.path" (click)="sidenav.toggle()">
+    <mat-nav-list class="flex-grow-1 px-5">
+      <mat-list-item color="primary" *ngFor="let n of navItems" [routerLink]="n.path" routerLinkActive="active" (click)="sidenav.toggle()" class="text-center">
         {{n.menuItem}}
       </mat-list-item>
     </mat-nav-list>
