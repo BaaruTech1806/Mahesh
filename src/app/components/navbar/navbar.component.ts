@@ -7,11 +7,12 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import { SideNavComponent } from "../side-nav/side-nav.component";
 import { CommonModule } from '@angular/common';
 import {MatListModule} from '@angular/material/list';
+import { MatRippleModule } from '@angular/material/core';
 
 @Component({
   selector: 'app-navbar', 
   standalone: true,
-  imports: [MatToolbarModule,MatListModule,RouterModule, MatButtonModule,CommonModule, MatIconModule, MatSidenavModule, SideNavComponent,RouterLinkActive],
+  imports: [MatToolbarModule,MatListModule,MatRippleModule,RouterModule, MatButtonModule,CommonModule, MatIconModule, MatSidenavModule, SideNavComponent,RouterLinkActive],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss'
 })
@@ -27,7 +28,7 @@ export class NavbarComponent {
       },
       {
         path:'theory',
-        menuItem:'Theory'
+        menuItem:'Theory Questions'
       },
       
     ]
